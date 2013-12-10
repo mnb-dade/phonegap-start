@@ -36,17 +36,22 @@ var app = {
 };
 
 function deviceReady(){
-  // Load Menu
-  $('#menu-placeholder').load("pages/menu.html", function(){
+  $(function() {
+    // Load Menu
+    $('#menu-placeholder').load("pages/menu.html", function(){
+      bindPageLinks();
+    });
+  
+    // Workaround for navbar bug on orientation change
+    $(window).bind('resize', function() {  
+      $('#main-navbar').css('width', $('body').css('width'));
+    }).trigger('resize');
+    
+    // Eliminate the 300ms delay after physical taps
+    FastClick.attach(document.body);
+    
     bindPageLinks();
   });
-  
-  // Workaround for navbar bug on orientation change
-  $(window).bind('resize', function() {  
-    $('#main-navbar').css('width', $('body').css('width'));
-  });
-  
-  $(window).trigger('resize');
 }
 
 function bindPageLinks(){

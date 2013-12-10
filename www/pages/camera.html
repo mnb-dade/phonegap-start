@@ -1,0 +1,15 @@
+<h2>Camera</h2>
+
+<button class="btn btn-default btn-block btn-block btn-lg" onclick="capturePhoto();">Capture Photo</button> <br>
+
+<button class="btn btn-default btn-block btn-block btn-lg" onclick="capturePhotoEdit();">Capture Editable Photo</button> 
+<br>
+
+<button class="btn btn-default btn-block btn-block btn-lg" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button>
+<br>
+
+<button class="btn btn-default btn-block btn-block btn-lg" onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button>
+<br>
+
+<img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+<img style="display:none;" id="largeImage" src="" />
