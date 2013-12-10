@@ -55,7 +55,7 @@ function deviceReady(){
 }
 
 function bindPageLinks(){
-  $('a.page-link').on('click', function(event){
+  $('a.page-link').unbind('click').on('click', function(event){
     var page = $(this).data('page');
     var callback = $(this).data('callback');
     event.preventDefault();
