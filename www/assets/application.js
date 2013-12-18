@@ -2123,7 +2123,7 @@ function captureSuccess(mediaFiles) {
   }
 }
 
-// Upload files to server
+// Add file name to list
 function displayFile(mediaFile, mediaType) {
   var name = mediaFile.name;
   var output = $('#capture-output');
