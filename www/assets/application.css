@@ -5000,6 +5000,13 @@ td.visible-print {
 html, body {
   width: 100%; }
 
+a, button {
+  outline: none; }
+
+#main-navbar .navbar-toggle {
+  border: none;
+  background: none; }
+
 #main-navbar {
   position: fixed;
   width: 100%;
