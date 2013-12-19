@@ -17,8 +17,10 @@ function stopCompassWatch() {
 }
 
 function onCompassSuccess(heading) {
-  var output = $('#compass-output');
-  output.text('Heading: ' + heading.magneticHeading);
+  var needle = $('#compass-needle');
+  needle.css('-transform', 'rotate(' + heading + 'deg)');
+  needle.css('-webkit-transform', 'rotate(' + heading + 'deg)');
+  needle.css('-ms-transform', 'rotate(' + heading + 'deg)');
 }
 
 function onCompassError(compassError) {
