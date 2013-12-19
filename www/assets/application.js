@@ -2156,11 +2156,12 @@ function stopCompassWatch() {
 }
 
 function onCompassSuccess(heading) {
-  console.log(heading);
+  magneticHeading = heading.magneticHeading;
+  console.log(magneticHeading);
   var needle = $('#compass-needle');
-  needle.css('-transform', 'rotate(' + heading + 'deg)');
-  needle.css('-webkit-transform', 'rotate(' + heading + 'deg)');
-  needle.css('-ms-transform', 'rotate(' + heading + 'deg)');
+  needle.css('-transform', 'rotate(' + magneticHeading + 'deg)');
+  needle.css('-webkit-transform', 'rotate(' + magneticHeading + 'deg)');
+  needle.css('-ms-transform', 'rotate(' + magneticHeading + 'deg)');
 }
 
 function onCompassError(compassError) {
