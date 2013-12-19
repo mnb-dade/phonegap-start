@@ -17,6 +17,7 @@ function stopCompassWatch() {
 }
 
 function onCompassSuccess(heading) {
+  console.log(heading);
   var needle = $('#compass-needle');
   needle.css('-transform', 'rotate(' + heading + 'deg)');
   needle.css('-webkit-transform', 'rotate(' + heading + 'deg)');
