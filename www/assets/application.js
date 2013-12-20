@@ -2038,7 +2038,7 @@ function onSuccess(acceleration){
     plane.css('width', '100%');
   }
   else if (z > 3.9 && z < 6.9) {
-    plane.css('width', 100 - (z * 10) + '%');
+    plane.css('width', 100 - (z - 3.9 * 10) + '%');
   }
   else if (z >= 6.9){
     plane.css('width', '30%');
