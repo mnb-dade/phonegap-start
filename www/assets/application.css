@@ -5050,4 +5050,8 @@ h1, h2 {
   margin-top: 40px; }
 
 #plane {
-  width: 100%; }
+  width: 100%;
+  -webkit-transition: -webkit-transform 200ms ease-out;
+  -moz-transition: -moz-transform 200ms ease-out;
+  -o-transition: -o-transform 200ms ease-out;
+  transition: transform 200ms ease-out; }

@@ -11,7 +11,7 @@ function onSuccess(acceleration){
   var x = acceleration.x;
   var y = acceleration.y;
   var z = acceleration.z;
-  var x_rotation = -(x * 2);
+  var x_rotation = -(x * 10);
   
   output.html('Acceleration X: ' + acceleration.x         + '<br />' +
               'Acceleration Y: ' + acceleration.y         + '<br />' +
@@ -22,8 +22,14 @@ function onSuccess(acceleration){
   plane.css('-webkit-transform', 'rotate(' + x_rotation + 'deg)');
   plane.css('-ms-transform', 'rotate(' + x_rotation + 'deg)');
   
-  if(z > 4 && z < 9){
+  if(z < 2){
+    plane.css('width', '100%');
+  }
+  else if (z > 2 && z < 6.9) {
     plane.css('width', 100 - (z * 10) + '%');
+  }
+  else if (z >= 6.9){
+    plane.css('width', '30%');
   }
 }
 
