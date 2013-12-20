@@ -2,12 +2,13 @@ var watchID = null;
 
 function accelerometerPageLoaded(){
   // Update acceleration every 3 seconds
-  var options = { frequency: 100 };
-  watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+  // var options = { frequency: 100 };
+  // watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
   
   window.addEventListener('deviceorientation', function (event) {
     var alpha = event.alpha;
     var beta = event.beta;
+    var gamma = event.gamma;
     var plane = $('#plane');
     
     plane.css('-transform', 'rotate(' + -alpha + 'deg)');
@@ -17,6 +18,10 @@ function accelerometerPageLoaded(){
     if(beta < 0){
       plane.css('width', 100 + beta + '%');
     }
+    
+    $('#output').html('Alpha: ' + alpha + '<br />' +
+                      'Beta: ' + beta + '<br />' +
+                      'Gamma: ' + gamma + '<br />')
   });
 }
 
