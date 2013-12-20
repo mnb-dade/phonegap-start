@@ -2021,14 +2021,20 @@ function accelerometerPageLoaded(){
     var alpha = event.alpha;
     var beta = event.beta;
     var gamma = event.gamma;
+    
+    var alpha_offset = 270;
+    var beta_offset = 90;
+    
+    var alpha_rotation = alpha_offset - alpha;
+    
     var plane = $('#plane');
     
-    plane.css('-transform', 'rotate(' + -alpha + 'deg)');
-    plane.css('-webkit-transform', 'rotate(' + -alpha + 'deg)');
-    plane.css('-ms-transform', 'rotate(' + -alpha + 'deg)');
+    plane.css('-transform', 'rotate(' + alpha_rotation + 'deg)');
+    plane.css('-webkit-transform', 'rotate(' + alpha_rotation + 'deg)');
+    plane.css('-ms-transform', 'rotate(' + alpha_rotation + 'deg)');
     
-    if(beta < 0){
-      plane.css('width', 100 + beta + '%');
+    if(beta < beta_offset){
+      plane.css('width', 100 - (beta_offset - beta) + '%');
     }
     
     $('#output').html('Alpha: ' + alpha + '<br />' +
